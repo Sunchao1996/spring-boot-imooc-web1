@@ -1,0 +1,36 @@
+spring:
+  profiles:
+    active: @environment@
+#    数据库配置
+  datasource:
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/dbgirl
+      username: root
+      password: root
+#      jpa配置
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+#Redis配置
+#  redis:
+#    host: 127.0.0.1
+#    port: 6379
+#    database: 0
+#    password:
+
+#    RabbitMQ配置
+#  rabbitmq:
+#    host: localhost
+#    port: 5672
+#    username: test1
+#    password: 123
+#    virtual-host: /
+#    mongodburi这个参数里面包含了三部分内容，ip、端口、数据库，localhost是ip，27017是端口，test是对应的数据库名
+#            如果需要用户名和密码，只需要mongodb://name:pass@localhost:27017/test,即可
+#  data:
+#    mongodb:
+#      uri: mongodb://localhost:27017/test
+#日志输出路径
+logging:
+  path: d:\\logs\\springboot
