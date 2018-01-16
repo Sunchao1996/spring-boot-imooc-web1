@@ -1,8 +1,12 @@
 package com.imooc.domain;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 
 /**
  * Created by Sunc on 2018/1/11.
@@ -12,9 +16,9 @@ public class Girl {
     @Id
     @GeneratedValue
     private Integer id;
-
+    @NotEmpty
     private String cupSize;
-
+    @Max(value = 10,message = "111")
     private Integer age;
 
     public Girl() {
@@ -42,5 +46,15 @@ public class Girl {
 
     public void setAge(Integer age) {
         this.age = age;
+    }
+
+
+    @Override
+    public String toString() {
+        return "Girl{" +
+                "id=" + id +
+                ", cupSize='" + cupSize + '\'' +
+                ", age=" + age +
+                '}';
     }
 }

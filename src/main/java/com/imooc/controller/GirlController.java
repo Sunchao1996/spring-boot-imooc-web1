@@ -1,11 +1,15 @@
 package com.imooc.controller;
 
 import com.imooc.domain.Girl;
+import com.imooc.exception.GirlException;
 import com.imooc.repository.GirlRepository;
 import com.imooc.service.GirlService;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 /**
@@ -21,14 +25,14 @@ public class GirlController {
     /*获取全部女生
     * */
     @GetMapping(value = "/girls")
-    public List<Girl> girlList() {
-        return girlRepository.findAll();
+    public List<Girl> girlList() throws RuntimeException{
+        throw  new GirlException(100,"222");
     }
     /*
     * 添加女生
     * */
     @PostMapping("/girls")
-    public Girl girlAdd(Girl girl) {
+    public Girl girlAdd(@Valid Girl girl) {
         return girlRepository.save(girl);
     }
 
