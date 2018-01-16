@@ -116,8 +116,10 @@
     </dependencies>
 
     <build>
+        <!--打包后文件名-->
         <finalName>girl_profiles</finalName>
         <plugins>
+            <!--maven编译插件-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -126,6 +128,7 @@
                     <target>${java.version}</target>
                 </configuration>
             </plugin>
+            <!--spring打包插件-->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
@@ -137,6 +140,7 @@
                     </execution>
                 </executions>
             </plugin>
+            <!--指定jar包入口文件地址-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
@@ -164,7 +168,9 @@
                 </configuration>
             </plugin>-->
         </plugins>
+        <!--对资源文件进行打包-->
         <resources>
+            <!--将jar包打包到哪个地方-->
             <resource>
                 <directory>src/main/lib</directory>
                 <targetPath>BOOT-INF/lib/</targetPath>
@@ -172,6 +178,7 @@
                     <include>**/*.jar</include>
                 </includes>
             </resource>
+            <!--将哪里的资源文件打包到jar中，排除哪些资源文件-->
             <resource>
                 <filtering>true</filtering>
                 <directory>src/main/resources</directory>
@@ -180,6 +187,7 @@
                     <exclude>application-prod.yml</exclude>
                 </excludes>
             </resource>
+            <!--将哪里的资源文件打包到jar中，包含哪些资源文件-->
             <resource>
                 <filtering>true</filtering>
                 <directory>src/main/resources</directory>
