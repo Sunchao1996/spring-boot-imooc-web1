@@ -108,10 +108,10 @@
             <version>3.4.2</version>
         </dependency>
         <!--spring-boot整合mongodb-->
-        <dependency>
+        <!--<dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-mongodb</artifactId>
-        </dependency>
+        </dependency>-->
 
     </dependencies>
 

@@ -12,7 +12,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest
 @RunWith(SpringRunner.class)
 public class TestMongodb {
-    @Autowired
+    /*@Autowired
     private StaffRepository staffRepository;
 
     @Test
@@ -33,5 +33,5 @@ public class TestMongodb {
         System.out.println("按姓名查询");
         System.out.println("---------------------------------------");
         System.out.println(staffRepository.findByName("李四"));
-    }
+    }*/
 }
