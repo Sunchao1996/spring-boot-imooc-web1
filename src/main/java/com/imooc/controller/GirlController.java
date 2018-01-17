@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 import java.util.List;
 
@@ -25,8 +27,11 @@ public class GirlController {
     /*获取全部女生
     * */
     @GetMapping(value = "/girls")
-    public List<Girl> girlList() throws RuntimeException{
-        throw  new GirlException(100,"222");
+    public List<Girl> girlList(HttpServletRequest request, HttpServletResponse response) throws RuntimeException{
+        request.getSession().setAttribute("name","name");
+
+        return girlRepository.findAll();
+//        throw  new GirlException(100,"222");
     }
     /*
     * 添加女生
