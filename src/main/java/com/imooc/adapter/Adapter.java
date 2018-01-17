@@ -11,7 +11,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 public class Adapter extends WebMvcConfigurerAdapter{
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(new HelloFilter()).addPathPatterns("/*");
+        registry.addInterceptor(new HelloFilter()).addPathPatterns("/**");
     }
-
 }
