@@ -10,7 +10,7 @@ import java.io.IOException;
 /**
  * Created by Sunc on 2018/1/17.
  */
-@WebServlet
+@WebServlet("/hello")
 public class HelloServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
