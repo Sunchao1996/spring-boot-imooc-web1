@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Created by Sunc on 2018/1/17.
  */
-public class HelloFilter implements HandlerInterceptor {
+public class HelloInterception implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         System.out.println(request);
