@@ -1,6 +1,7 @@
 package com.imooc.domain;
 
 import org.hibernate.validator.constraints.NotEmpty;
+import org.hibernate.validator.constraints.ScriptAssert;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,13 +13,25 @@ import javax.validation.constraints.Min;
  * Created by Sunc on 2018/1/11.
  */
 @Entity
+@ScriptAssert(groups = {Girl.Check.class},lang = "javascript",script = "com.imooc.domain.Girl.checkCupSize(_this.cupSize)")
 public class Girl {
+    public interface CupSize{}
+    public interface Check{}
+
+    public static boolean checkCupSize(String cupSize){
+        if(cupSize.equals("F")){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
     @Id
     @GeneratedValue
     private Integer id;
-    @NotEmpty
+    @NotEmpty(groups = {CupSize.class})
     private String cupSize;
-    @Max(value = 10,message = "111")
+    @Max(value = 10,message = "111",groups = {CupSize.class})
     private Integer age;
 
     public Girl() {

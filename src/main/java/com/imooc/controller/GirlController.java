@@ -32,7 +32,7 @@ public class GirlController {
     * 添加女生
     * */
     @PostMapping("/girls")
-    public Girl girlAdd(@Valid Girl girl) {
+    public Girl girlAdd(@Validated(Girl.Check.class) Girl girl) {
         return girlRepository.save(girl);
     }
 
