@@ -83,4 +83,9 @@ public class GirlController {
     public void girlTwo(){
         girlService.two();
     }
+
+    @RequestMapping("/hello/girl")
+    public String hello(){
+        return "hello";
+    }
 }

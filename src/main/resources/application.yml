@@ -12,6 +12,11 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
+#    jsp视图设置
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp
+      suffix: .jsp
 #Redis配置
 #  redis:
 #    host: 127.0.0.1
@@ -34,3 +39,4 @@ spring:
 #日志输出路径
 logging:
   path: d:\\logs\\springboot
+
