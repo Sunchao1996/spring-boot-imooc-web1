@@ -1,0 +1,16 @@
+package com.imooc.servlet;
+
+import org.springframework.boot.web.servlet.ServletRegistrationBean;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+/**
+ * Created by Sunc on 2018/1/17.
+ */
+@Configuration
+public class ServletBeanConfiguration {
+    @Bean
+    public ServletRegistrationBean servletRegistrationBean(){
+        return new ServletRegistrationBean(new HelloServlet(),"/hello1");
+    }
+}
